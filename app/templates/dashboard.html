@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BPO Tool Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>Staff</h2>
+    <ul>
+        {% for member in staff %}
+            <li><a href="/staff/{{ member.id }}">{{ member.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add Staff</h2>
+    <form action="/staff" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Schedules</h2>
+    <ul>
+        {% for sched in schedules %}
+            <li>{{ sched.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
